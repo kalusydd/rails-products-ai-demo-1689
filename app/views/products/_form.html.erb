@@ -7,6 +7,12 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :price %>
+    <%= f.input :material %>
+    <%= f.label :category %>
+    <%= f.select :category, Product::PRODUCT_CATEGORIES  %>
+    <%= f.input :material %>
+    <%= f.input :available_quantity %>
+    <%= f.input :size %>
   </div>
 
   <div class="form-actions">
