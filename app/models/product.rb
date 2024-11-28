@@ -2,6 +2,10 @@ class Product < ApplicationRecord
   has_neighbors :embedding
   after_create :set_embedding
 
+  PRODUCT_CATEGORIES = ["clothing", "furniture", "accessory"]
+  validates :category, presence: true, inclusion: { in: PRODUCT_CATEGORIES }
+  validates :name, :description, :price, :material, :available_quantity, :size, presence: true
+
   private
 
   def set_embedding
