@@ -44,7 +44,7 @@ products = [
 
 products.each do |product|
   new_product = Product.create!(product)
-  # new_product.set_photo
+  new_product.set_photo
 end
 
 puts "Created #{Product.count} products with images!"

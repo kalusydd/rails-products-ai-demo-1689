@@ -6,12 +6,12 @@ class ProductsTest < ApplicationSystemTestCase
   end
 
   test "visiting the index" do
-    visit products_url
+    visit root_url
     assert_selector "h1", text: "Products"
   end
 
   test "should create product" do
-    visit products_url
+    visit root_url
     click_on "New product"
 
     fill_in "Description", with: @product.description
