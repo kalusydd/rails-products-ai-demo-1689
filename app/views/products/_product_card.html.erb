@@ -1,18 +1,12 @@
 <div id="<%= dom_id product %>">
-  <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill if product.photo.attached? %>
-  <p>
-    <strong>Name:</strong>
-    <%= product.name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= product.description %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= product.price %>
-  </p>
-
+  <div class="card-trip">
+    <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill if product.photo.attached? %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= link_to product.name, product_path(product) %></h2>
+        <p><%= product.description %></p>
+      </div>
+      <h2 class="card-trip-pricing">€<%= product.price %></h2>
+    </div>
+  </div>
 </div>
