@@ -1,4 +1,6 @@
 <div id="<%= dom_id product %>">
+  <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill if product.photo.attached? %>
+
   <p>
     <strong>Name:</strong>
     <%= product.name %>

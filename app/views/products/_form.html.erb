@@ -12,6 +12,7 @@
     <%= f.select :category, Product::PRODUCT_CATEGORIES  %>
     <%= f.input :available_quantity %>
     <%= f.input :size %>
+    <%= f.input :photo, as: :file %>
   </div>
 
   <div class="form-actions">
