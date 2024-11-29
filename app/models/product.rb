@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   has_neighbors :embedding
   after_create :set_embedding
+  has_one_attached :photo
 
   PRODUCT_CATEGORIES = ["clothing", "furniture", "accessory"]
   validates :category, presence: true, inclusion: { in: PRODUCT_CATEGORIES }

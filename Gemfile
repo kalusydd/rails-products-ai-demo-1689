@@ -2,6 +2,9 @@ source "https://rubygems.org"
 
 ruby "3.1.2"
 
+# Cloudinary
+gem "cloudinary"
+
 # Neighbor for vectors
 gem 'neighbor'
 
