@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :products
   devise_for :users
-  root to: "pages#home"
+  root to: "products#index"
+  resources :products, except: :index
+  get "profile", to: "pages#profile"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

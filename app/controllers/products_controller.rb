@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   def destroy
     @product.destroy!
-    redirect_to products_url, notice: "Product was successfully destroyed.", status: :see_other
+    redirect_to root_url, notice: "Product was successfully destroyed.", status: :see_other
   end
 
   private

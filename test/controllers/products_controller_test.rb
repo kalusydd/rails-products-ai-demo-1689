@@ -6,7 +6,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get products_url
+    get root_url
     assert_response :success
   end
 
@@ -17,7 +17,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create product" do
     assert_difference("Product.count") do
-      post products_url, params: { product: { description: @product.description, name: @product.name, price: @product.price } }
+      post root_url, params: { product: { description: @product.description, name: @product.name, price: @product.price } }
     end
 
     assert_redirected_to product_url(Product.last)
@@ -43,6 +43,6 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       delete product_url(@product)
     end
 
-    assert_redirected_to products_url
+    assert_redirected_to root_url
   end
 end
