@@ -1,14 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Products</h1>
-
-<div id="products">
-  <% @products.each do |product| %>
-    <%= render "product_card", product: product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
-  <% end %>
+<div class="product-bar">
+  <h1>Products</h1>
+  <div class="d-flex">
+    <%= form_with url: products_path, method: :get, class: "d-flex mx-4" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+    <%= link_to "+", new_product_path, class: "btn btn-success" %>
+  </div>
 </div>
 
-<%= link_to "New product", new_product_path %>
+<div id="products" class="product-cards">
+  <% @products.each do |product| %>
+    <%= render "product_card", product: product %>
+  <% end %>
+</div>
