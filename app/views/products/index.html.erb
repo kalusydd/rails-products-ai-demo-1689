@@ -3,7 +3,7 @@
 <div class="product-bar">
   <h1>Products</h1>
   <div class="d-flex">
-    <%= form_with url: products_path, method: :get, class: "d-flex mx-4" do %>
+    <%= form_with url: root_path, method: :get, class: "d-flex mx-4 product-search-bar" do %>
       <%= text_field_tag :query,
             params[:query],
             class: "form-control",
