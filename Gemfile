@@ -2,6 +2,9 @@ source "https://rubygems.org"
 
 ruby "3.1.2"
 
+# PG search
+gem "pg_search"
+
 # Cloudinary
 gem "cloudinary"
 

@@ -9,6 +9,13 @@ class Product < ApplicationRecord
   validates :category, presence: true, inclusion: { in: PRODUCT_CATEGORIES }
   validates :name, :description, :price, :material, :available_quantity, :size, presence: true
 
+  include PgSearch::Model
+  pg_search_scope :search_by_keyword,
+    against: [:name, :description, :material],
+    using: {
+      tsearch: { prefix: true }
+    }
+
   def set_photo
     puts "Generating image..."
     client = OpenAI::Client.new
@@ -19,7 +26,6 @@ class Product < ApplicationRecord
     url = response["data"][0]["url"]
     file = URI.parse(url).open
 
-    # photo.purge if photo.attached?
     photo.attach(io: file, filename: "ai_generated_image.jpg", content_type: "image/png")
     return photo
   end
