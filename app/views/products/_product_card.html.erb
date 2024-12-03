@@ -1,6 +1,10 @@
 <div id="<%= dom_id product %>">
   <div class="card-trip">
-    <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill if product.photo.attached? %>
+    <% if product.photo.attached? %>
+      <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <%= image_tag 'stock_image', height: 300, width: 400 %>
+    <% end %>
     <div class="card-trip-infos">
       <div>
         <h2><%= link_to product.name, product_path(product) %></h2>
