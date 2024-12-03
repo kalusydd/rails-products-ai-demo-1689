@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 ruby "3.1.2"
 
+gem "ffi", "< 1.17.0"
 gem 'rubygems-update', '~> 3.5', '>= 3.5.23'
 
 # PG search
