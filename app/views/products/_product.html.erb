@@ -2,7 +2,7 @@
   <% if product.photo.attached? %>
     <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
   <% else %>
-    <%= <%= image_tag 'stock_image', height: 300, width: 400 %> %>
+    <%= <%= image_tag asset_path('stock_image.png'), height: 300, width: 400 %> %>
   <% end %>
   <p>
     <strong>Name:</strong>
